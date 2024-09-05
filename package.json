@@ -1,0 +1,25 @@
+{
+  "name": "reactapi2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "esbuild --bundle src/main.jsx --outfile=main.js --servedir=./ --watch",
+    "build": "esbuild --bundle src/main.jsx --outfile=main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/css": "^11.13.0",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "esbuild": "^0.23.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0"
+  }
+}
