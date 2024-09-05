@@ -1,5 +1,6 @@
 # React CRUD com npm
-- Usa JSX, componentes, @emotion/styled, props, useEffect, useState, fetch, map, form  
+- Usa JSX, componentes, @emotion/styled, props, useEffect, useState, fetch, map, form
+- Usa API Basic para pegar os dados  
 Para somente iniciar:
 - ```npm install```
 - ```npm start```  
