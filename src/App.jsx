@@ -32,8 +32,8 @@ const App = () => {
                     <p>Altura {pessoa.altura}</p>
 
                     <DisplayFlex>
-                        {/* <ButtonDelete formType={"Delete"} id={pessoa.id} /> */}
-                        <Button formType={"Delete"} id={pessoa.id} />
+                        <ButtonDelete formType={"Delete"} id={pessoa.id} />
+                        {/* <Button formType={"Delete"} id={pessoa.id} /> */}
                     </DisplayFlex>
 
                     {formType == "Update" && <Form formType={formType} id={pessoa.id} />}
