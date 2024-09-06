@@ -1,23 +1,28 @@
 import styled from '@emotion/styled'
 
-export const Card = styled.div(() => {
+export const Card = styled.div((
+    // props
+) => {
     return {
-        //display: 'flex',
+        // display: `${props}`,
         //color: 'red'
         border: '2px, solid',
         margin: '10px',
-        padding: '10px'
+        padding: '10px',
+        // justifyContent: 'flex-end'
     }
 })
 
 export const DisplayFlex = styled.div((
-    { props }
+    props
 ) => {
-    console.log(props);
+
     return {
         display: 'flex',
-        flexDirection: `${props}`,
+        flexDirection: `${props.flexDirection}`,
+        justifyContent: 'flex-end',
         // color: 'blue'
+
     }
 })
 

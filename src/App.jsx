@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Body, Card, DisplayFlex } from "./css";
-import Buttons from "./Button";
+import { Body, Card, DisplayFlex } from "./jss";
+import Button from "./Button";
 import Form from "./Form";
+import ButtonDelete from "./ButtonDelete";
 
 const App = () => {
     const [data, setData] = useState("");
@@ -12,26 +13,30 @@ const App = () => {
             .then((response) => response.json())
             .then((dataJson) => setData(dataJson))
     }, []);
-    //console.log(formType);
 
     return (
         <Body>
-            <DisplayFlex props={"row"}>
-                <Buttons formType={"Create"} setFormType={setFormType} />
-                {/* <Buttons formType={"Read"} setFormType={setFormType} /> */}
-                <Buttons formType={"Update"} setFormType={setFormType} />
-                <Buttons formType={"Delete"} setFormType={setFormType} />
+            <DisplayFlex flexDirection={"column"}>
+                <Button formType={"Create"} setFormType={setFormType} />
+                <Button formType={"Read"} setFormType={setFormType} />
+                <Button formType={"Update"} setFormType={setFormType} />
             </DisplayFlex>
 
-            <Form formType={formType} setFormType={setFormType} />
+            {formType == "Create" && <Form formType={formType} />}
 
             {data && data.map((pessoa, index) => (
-                <Card key={index}>
-                    <p>Id: {pessoa.id}</p>
+                <Card key={index} >
                     <h2>Nome: {pessoa.nome}</h2>
                     <p>Idade: {pessoa.idade}</p>
                     <p>Peso {pessoa.peso}</p>
                     <p>Altura {pessoa.altura}</p>
+
+                    <DisplayFlex>
+                        {/* <ButtonDelete formType={"Delete"} id={pessoa.id} /> */}
+                        <Button formType={"Delete"} id={pessoa.id} />
+                    </DisplayFlex>
+
+                    {formType == "Update" && <Form formType={formType} id={pessoa.id} />}
                 </Card>
             ))}
         </Body>
